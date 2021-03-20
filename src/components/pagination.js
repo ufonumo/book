@@ -25,8 +25,8 @@ const [pnumber, setNumber] = useState(0)
                      
                     </li>
                 ))
-                        <IoArrowBack onClick={() => paginate({pnumber})} />
-                         <IoArrowForward onClick={() => paginate({pnumber})} />
+                        <IoArrowBack onClick={() => alert({pnumber})} />
+                         <IoArrowForward onClick={() => alert({pnumber})} />
 }
             </ul>
         </nav>
