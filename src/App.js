@@ -75,12 +75,12 @@ function App() {
                     showProfile={showProfile}
                   /> */}
 
-                  <Bookings
+    {showBooking && (<Bookings
                       booking={booking}
                       showBooking={showBooking}
                       showProfile={showProfile}
                       showSuccess={showSuccess}
-                    /> 
+                    /> )}
 
                     <Profile
                       profile={profile}
