@@ -13,16 +13,15 @@ export default function SidebarNav({Navsidebar , showNavSidebar , showProfile}) 
     return (
         <div>
 
-            <Nav className={Navsidebar ? 'nav-menu active col-md-12 text-center d-md-block sidebar' : 'nav-menu col-md-12 text-center  d-md-block bg-light sidebar'} 
+            <Nav className={Navsidebar ? 'nav-menu active col-md-12 text-center sidebar' : 'nav-menu col-md-12 text-center  sidebar'} 
                 activeKey="/home"
                 >
-                <div className='navbar'>
-                    <Link className='menu-bars ml-auto'>
-                        <ImCancelCircle onClick={showNavSidebar} id='close' />
-                    </Link>
-                </div>
-
                 <div  className="sidebar_sticky" onClick={showNavSidebar}>
+                    <div className='navbar'>
+                        <Link className='menu-bars mr-auto'>
+                            <ImCancelCircle onClick={showNavSidebar} id='close' />
+                        </Link>
+                    </div>
                     <Nav.Item>
                         <Nav.Link href="/" className='elpis'> <img src={eye} className='sidenav_icons' alt="eye"/> Elpis</Nav.Link>
                     </Nav.Item>
@@ -30,10 +29,10 @@ export default function SidebarNav({Navsidebar , showNavSidebar , showProfile}) 
                         <Nav.Link > <Link to='/'> <img src={compass} className='pr-3' alt="compass"/> Discover</Link></Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-1"> <Link> <img src={searchImg} className='sidenav_icons' alt="search"/> Search</Link></Nav.Link>
+                        <Nav.Link eventKey="link-1"> <Link to='/SearchClass'> <img src={searchImg} className='sidenav_icons' alt="search"/> Search</Link></Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-2">  <Link onClick={showProfile}> <img src={profile} className='sidenav_icons' alt="profile"/> Profile</Link> </Nav.Link>
+                        <Nav.Link eventKey="link-2">  <Link to='Profile' onClick={showProfile}> <img src={profile} className='sidenav_icons' alt="profile"/> Profile</Link> </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link>  <Link to='#'> <img src={chat} className='sidenav_icons' alt="chat"/> Chat</Link>   </Nav.Link>

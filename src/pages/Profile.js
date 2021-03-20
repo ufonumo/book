@@ -6,8 +6,6 @@ import NoClass from '../components/NoClass';
 
 export default function Profile({profile , showProfile}) {
 
-
-
     return (
         <div>
             <div className={profile ? " col-lg-6 ml-auto booking profile active ": "col-lg-6 ml-auto profile booking d-none"}>

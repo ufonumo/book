@@ -1,8 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-import david from '../assets/unsplash.jpg'
-import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 import { Pagination } from './pagination';
-import Carousel from 'react-elastic-carousel';
 
 export default function ProfileComponent() {
     // const API = 'http://elpis.sucursalsvirtual.com/apiv1/student/readone.php?id=22';

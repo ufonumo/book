@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import istock from '../assets/unsplash.jpg'
 import david from '../assets/unsplash-1.jpg'
 import femoree from '../assets/uspash 2.jpg'
+import ClassHome from './ClassHome'
 
 export default function HomeCarousel({ booking, profile}) {
     return (
@@ -48,6 +49,10 @@ export default function HomeCarousel({ booking, profile}) {
                      </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+
+            <div>
+                <ClassHome/>
+            </div>
         </div>
     )
 }

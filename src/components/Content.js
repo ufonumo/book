@@ -6,6 +6,7 @@ import SidebarNav from './SidebarNav';
 import NavbarElpis from './NavbarElpis';
 import Profile from '../pages/Profile';
 import Sucess from './Sucess';
+import SearchClass from '../pages/SearchClass';
 
 export default function Content() {
     const API = 'http://elpis.sucursalsvirtual.com/apiv1/course/readall.php'
@@ -28,19 +29,18 @@ export default function Content() {
 
     const [classId, setClassId] = useState('')
 
-    const handleClassId = async (classId) =>{
-        const response = await fetch( API.records) 
-        setClassId = response
-    }
-    console.log(classId);
+    const handleClassId = (e) =>{
+        setClassId(e.target.value)
 
+    }
+
+    console.log(classId);
 
     useEffect(()=>{
     
         const getClass = async ()=>{
           const response = await fetch( API);
           let data = await response.json();
-          console.log(data);
           setClassHome(data.records);
         };
     
@@ -75,7 +75,8 @@ export default function Content() {
                             booking={booking}
                             profile={profile}
                             classHome={classHome}
-                            setClassId={setClassId}
+                            // setClassId={setClassId}
+                            handleClassId={handleClassId}
                          />
 
                         <Bookings
@@ -90,6 +91,17 @@ export default function Content() {
                             showProfile={showProfile}
                          />
 
+
+                        {/* <SearchClass
+                            booking={booking}
+                            profile={profile}
+                            showNavSidebar={showNavSidebar}
+                            Navsidebar={Navsidebar}
+                            showProfile={showProfile}
+                            showBooking={showBooking}
+                        /> */}
+                         
+
                          {/* <Sucess
                             profile={profile}
 
@@ -100,6 +112,7 @@ export default function Content() {
                 </div>
 
             </div>
+        
         </div>
     )
 }
