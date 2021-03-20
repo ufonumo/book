@@ -8,7 +8,7 @@ export const Pagination = ({profilePerPage, totalProfiles, paginate}) => {
     for(let i = 1; i <= Math.ceil(totalProfiles / profilePerPage); i++){
         pageNumbers.push(i)
     }
-
+const [pnumber, setNumber] = useState(0)
     return (
         <nav>
 
@@ -21,11 +21,13 @@ export const Pagination = ({profilePerPage, totalProfiles, paginate}) => {
                         {/* <a onClick={() => paginate(number)} className='page-link'>
                             {number}
                         </a> */}
-
-                        <IoArrowBack onClick={() => paginate(number)} />
-                         <IoArrowForward onClick={() => paginate(number)} />
+        {setNumber(number)}
+                     
                     </li>
-                ))}
+                ))
+                        <IoArrowBack onClick={() => paginate({pnumber})} />
+                         <IoArrowForward onClick={() => paginate({pnumber})} />
+}
             </ul>
         </nav>
     )
