@@ -16,13 +16,20 @@ const [pnumber, setNumber] = useState(0)
                          <IoArrowForward onClick={() => paginate(pageNumbers)} /> */}
 
             <ul className='pagination mx-auto'>
-                {pageNumbers.map(number =>{
-        return setNumber(number)}
-)
-                        
-}
-                    <IoArrowBack onClick={() => alert({pnumber})} />
-                         <IoArrowForward onClick={() => alert({pnumber})} />
+              <IoArrowBack onClick={
+                ()=>{
+                    pageNumbers.map(number=>{
+                        return paginate(number)
+                    })
+                }
+            }/>
+            <IoArrowForward onClick={
+                ()=>{
+                    pageNumbers.map(number=>{
+                        return paginate(number)
+                    })
+                }
+            }/>
             </ul>
         </nav>
     )
