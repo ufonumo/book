@@ -3,9 +3,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import istock from '../assets/unsplash.jpg';
 import david from '../assets/unsplash-1.jpg';
 import femoree from '../assets/uspash 2.jpg';
-import ClassHome from './ClassHome';
+import ClassHome from '../components/ClassHome';
 
-export default function HomeCarousel({ booking, profile }) {
+export default function Home({ booking, profile }) {
   return (
     <div>
       <Carousel className={booking || profile ? 'filter_back carousel' : 'carousel'}>
@@ -32,9 +32,7 @@ export default function HomeCarousel({ booking, profile }) {
         </Carousel.Item>
       </Carousel>
 
-      <div>
-        <ClassHome />
-      </div>
+      <ClassHome />
     </div>
   );
 }
