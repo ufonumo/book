@@ -1,5 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { Pagination } from './pagination';
+import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import Carousel from "react-elastic-carousel";
 
 export default function ProfileComponent() {
     // const API = 'http://elpis.sucursalsvirtual.com/apiv1/student/readone.php?id=22';
@@ -8,7 +10,7 @@ export default function ProfileComponent() {
     const [profileClass, setprofileClass] = useState([]);
     let [loading, setloading] = useState(false);
     let [currentPage, setCurrentPage] = useState(1);
-    let [profilePerPage] = useState(3);
+    let [profilePerPage] = useState(2);
   
     const indexOfLastPost = currentPage * profilePerPage;
     const indexOfFirstPost = indexOfLastPost - profilePerPage;
@@ -17,6 +19,9 @@ export default function ProfileComponent() {
     const paginate = (pageNumber) =>{
         setCurrentPage(pageNumber)
     };
+
+    // const [number , setNumber]=useState([])
+
 
     useEffect(()=>{
 
@@ -50,12 +55,12 @@ export default function ProfileComponent() {
                 <div className="row">
                 {/* <Carousel> */}
                     {currentProfiles.map( (list)  =>(
-                                <div  className="col-lg-6 class_home" key={list.id}>
-                                    <sub>{list.category}</sub>
-                                    <img src={list.filelocation} alt="class images"/>
-                                    <h6>{list.aim}</h6>
-                                    <p>₦{list.cost} NGN</p>
-                                </div>
+                        <div  className="col-lg-6 class_home" key={list.id}>
+                            <sub>{list.category}</sub>
+                            <img src={list.filelocation} alt="class images"/>
+                            <h6>{list.aim}</h6>
+                            <p>₦{list.cost} NGN</p>
+                        </div>
                     ))}
                 {/* </Carousel> */}
                 </div>

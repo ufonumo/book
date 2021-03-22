@@ -66,13 +66,13 @@
 
 }
 
-.dark_back{
+/* .dark_back{
   background-color: rgba(0, 0, 0, 0.527); 
 }
 
 .filter_back{
   filter: brightness(.4)
-}
+} */
 
 .nav-menu.active , .booking.active {
   left: 0;

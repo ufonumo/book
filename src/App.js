@@ -13,19 +13,19 @@ import Profile from './pages/Profile';
 import Messages from './components/Messages';
 import Chat from './components/Chat';
 import Payment from './components/Payment';
-function App() {
 
-  const API = 'http://elpis.sucursalsvirtual.com/apiv1/course/readall.php'
+
+function App() {
 
   //to open the side nav
   const [Navsidebar, setNavSidebar] = useState('false');
   const showNavSidebar = () => setNavSidebar(!Navsidebar);
 
   // to open the booking page
-  const [booking , setBooking] = useState('false')
+  const [booking , setBooking] = useState('true')
   const showBooking = () => setBooking(!booking);
 
-  const [profile , setProfile] = useState('false')
+  const [profile , setProfile] = useState('true')
   const showProfile = () => setProfile(!profile);
 
   const [success , setSuccess] = useState('false')
@@ -36,9 +36,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
+        {/* <Route  exact path="/"  component={LandingPage} /> */}
 
-        <div className={booking || profile ? 'container-fluid  dark_back' : 'container-fluid  '} >
-          <div className='row'>
+       <div className={booking || profile ? 'container-fluid  dark_back' : 'container-fluid  '} >
+          <div className='row'> 
               <div className={booking || profile ? ' col-lg-3 sidebar-wrapper  filter_back' : '  col-lg-3 sidebar-wrapper'}>      
                   <SidebarNav
                       showNavSidebar={showNavSidebar}
@@ -47,7 +48,7 @@ function App() {
                   />
               </div>
 
-              <div className='col-lg-9'  id="page-content-wrapper">
+             <div className='col-lg-9'  id="page-content-wrapper">
 
                   <NavbarElpis  
                       showNavSidebar={showNavSidebar}
@@ -57,35 +58,37 @@ function App() {
                   <Route  exact path="/" booking={booking}
                       profile={profile} component={HomeCarousel} />
 
-                  <Route  exact path="/SearchClass"  component={SearchClass} />
-                  <Route  exact path="/Profile"  component={Profile} />
-
-                  <Payment 
+                  {/* <Route  exact path="/SearchClass"  component={SearchClass} />
+                  <Route  exact path="/Profile"  component={Profile} /> */}
+                  
+                  {/* <Payment 
                     profile={profile}
                     showProfile={showProfile}
                   />
 
-                  {/* <Messages
+                  <Messages
                       profile={profile}
                     showProfile={showProfile}
-                  /> */}
+                  /> 
 
-                  {/* <Chat
+                  <Chat
                     profile={profile}
                     showProfile={showProfile}
-                  /> */}
-
-    {showBooking && (<Bookings
+                  />  */}
+                  {/* {showBooking && (<Bookings
                       booking={booking}
                       showBooking={showBooking}
                       showProfile={showProfile}
                       showSuccess={showSuccess}
-                    /> )}
+                    /> )} */}
 
-                    <Profile
+
+                    {/* <Profile
                       profile={profile}
                       showProfile={showProfile}
-                    />  
+                    />   */}
+
+                   
 
 
                   {/* <SearchClass
@@ -95,23 +98,21 @@ function App() {
                       Navsidebar={Navsidebar}
                       showProfile={showProfile}
                       showBooking={showBooking}
-                  /> */}
-                    
-
-                    {/* <Sucess
+                  />  */}
+{/* 
+                     <Sucess
                       profile={profile}
 
-                    /> */}
-
+                    />  */}
 
               </div> 
-          </div>
+            </div> 
 
             </div>
-        
+       
         {/* <Route  exact path="/"  component={Content} /> */}
         <Route  exact path="/Sucess"  component={Sucess} />
-        <Route  exact path="/Bookings/:id"  component={Bookings} />
+        <Route  exact path="/Bookings:Id"  component={Bookings} />
 
       </div>
     </BrowserRouter>
